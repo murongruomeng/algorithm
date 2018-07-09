@@ -56,7 +56,10 @@ main(int argc, char **argv)
 //    int a[] = {16, 4, 10, 14, 7, 9, 3, 2, 8, 1};
     int a[] = {4, 1, 3, 2, 16, 9, 10, 14, 8, 7};
 //    build_max_heap(a, 10);
+    printf("before sort: ");
+    print_array(a, 10);
     heap_sort(a, 10);
+    printf("after sort: ");
     print_array(a, 10);
     return EXIT_SUCCESS;
 }
