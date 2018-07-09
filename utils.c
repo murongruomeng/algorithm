@@ -23,3 +23,11 @@ print_array(int a[], int len)
 
     printf("\n");
 }
+
+void
+swap(int *x, int *y)
+{
+    int temp = *x;
+    *x = *y;
+    *y = temp;
+}

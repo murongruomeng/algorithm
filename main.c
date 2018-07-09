@@ -3,6 +3,7 @@
 #include "list.h"
 #include "sort.h"
 #include "utils.h"
+#include "heap.h"
 
 static int match(void *ptr1, void *ptr2);
 
@@ -41,17 +42,22 @@ main(int argc, char **argv)
     //     printf("%d ", *((int *)current->data));
 
     // printf("\n");
-    int RANGE_MAX = 100;
+//    int RANGE_MAX = 100;
+//
+//    int len = 21;
+//    int a[len];
+//    get_random_int_array(a, len, RANGE_MAX);
+//     printf("Before sort: ");
+//    print_array(a, len);
+//    merge_sort(a,0,len-1);
+//    printf("After  sort: ");
+//    print_array(a, len);
 
-    int len = 21;
-    int a[len]; 
-    get_random_int_array(a, len, RANGE_MAX);
-     printf("Before sort: ");
-    print_array(a, len);
-    merge_sort(a,0,len-1);
-    printf("After  sort: ");
-    print_array(a, len);
-
+//    int a[] = {16, 4, 10, 14, 7, 9, 3, 2, 8, 1};
+    int a[] = {4, 1, 3, 2, 16, 9, 10, 14, 8, 7};
+//    build_max_heap(a, 10);
+    heap_sort(a, 10);
+    print_array(a, 10);
     return EXIT_SUCCESS;
 }
 
