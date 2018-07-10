@@ -16,7 +16,7 @@ max_heapify(int a[], int i, int size)
         largest = li;
     }
 
-    if (li <= size-1 && a[largest] <= a[ri]) {
+    if (ri <= size-1 && a[largest] <= a[ri]) {
         largest = ri;
     }
 
@@ -29,7 +29,8 @@ max_heapify(int a[], int i, int size)
 void
 build_max_heap(int a[], int size)
 {
-    int i, j=size>>1;
+
+    int i, j=(size - 1) >> 1;
     for(i=j; i>=0; i--) {
         max_heapify(a, i, size);
     }
@@ -39,15 +40,12 @@ void
 heap_sort(int a[], int size)
 {
     build_max_heap(a, size);
-    printf("builded max heap: ");
-    print_array(a, 10);
-//    int i=size-1;
-//    int heap_size;
-//    for (; i >= 1; i--) {
-//        heap_size = i -1;
-//        swap(&a[i], &a[0]);
-//        max_heapify(a, 0, heap_size);
-//        printf("temp: ");
-//        print_array(a, heap_size + 1);
-//    }
+    int i=size-1;
+    int heap_size = i;
+    for (; i >= 1; i--) {
+
+        swap(&a[i], &a[0]);
+        max_heapify(a, 0, heap_size);
+        heap_size = i -1;
+    }
 }
