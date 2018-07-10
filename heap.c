@@ -12,11 +12,12 @@ max_heapify(int a[], int i, int size)
     int ri = (i<<1) + 2;
 
     int largest = i;
-    if (li <= size-1 && a[i] <= a[li]) {
+    if (li <= size-1 && a[i] < a[li]) {
         largest = li;
     }
 
-    if (ri <= size-1 && a[largest] <= a[ri]) {
+
+    if (ri <= size-1 && a[largest] < a[ri]) {
         largest = ri;
     }
 
@@ -48,4 +49,5 @@ heap_sort(int a[], int size)
         max_heapify(a, 0, heap_size);
         heap_size = i -1;
     }
+
 }

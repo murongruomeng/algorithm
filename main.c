@@ -59,9 +59,10 @@ main(int argc, char **argv)
     int len = 10;
     printf("Before sort: ");
     print_array(a, len);
-    heap_sort(a, 10);
+    heap_sort(a, len);
     printf("After  sort: ");
     print_array(a, len);
+
     return EXIT_SUCCESS;
 }
 
